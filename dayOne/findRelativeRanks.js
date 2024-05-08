@@ -1,19 +1,20 @@
+
 var findRelativeRanks = function(score){
-    let position = new Array(score.length);
+    let positions = new Array(score.length);
     for (let index = 0; index < score.length; index++) {
         let maximum_score = getMaximum(score);
         let maximum_score_index = score.findIndex((value) => value === maximum_score);
-        score[maximum_score_index] = 0;
+        score[maximum_score_index] = "";
         let position = getPosition(index);
-        position[maximum_score_index] = position;
+        positions[maximum_score_index] = position;
     }
-    return position;
+    return positions;
 };
 
 function getMaximum(score){
-    let max = score[0];
+    let max = 0;
     for(count of score){
-        if (count > max){
+        if (typeof count === "number" && count > max){
             max = count;
         }
     }

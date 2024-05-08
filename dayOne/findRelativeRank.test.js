@@ -13,3 +13,9 @@ test("That the array of score will give us the position of the array", ()=> {
     expect(findRelativeRank(score)).toEqual(position);
 });
 
+test("That the array of score will give us the position of the array", ()=> {
+    let score = [123123,11921,1,0,123]
+    let position = ["Gold Medal", "Silver Medal", "4", "5", "Bronze Medal"]
+    expect(findRelativeRank(score)).toEqual(position);
+});
+
